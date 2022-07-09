@@ -1,0 +1,6 @@
+.element__photo {
+  font-size: 0;
+  width: 282px;
+  height: 282px;
+  flex: 1 1 auto;
+}

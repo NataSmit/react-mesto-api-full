@@ -1,0 +1,11 @@
+.popup-view-image__container {
+  position: relative;
+  
+}
+
+
+@media screen and (max-width: 900px) {
+  .popup-view-image__container {
+    margin-top: 50%;
+  }
+}

@@ -1,0 +1,8 @@
+.popup__tooltip-img_type_error {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  background-image: url('../../../../images/InfoToolTip-error.svg');
+  background-repeat: no-repeat;
+  background-size: cover; 
+}

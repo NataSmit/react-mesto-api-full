@@ -1,0 +1,14 @@
+.popup__form-input {
+  font-family: "Inter", "Arial", "sans-serif", "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  max-width: 358px;
+  padding: 0 0 8px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+

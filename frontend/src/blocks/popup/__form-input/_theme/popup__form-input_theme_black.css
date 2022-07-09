@@ -1,0 +1,10 @@
+.popup__form-input_theme_black {
+  background-color: black;
+  color: #CCCCCC;
+  border-bottom: 2px solid rgba(204, 204, 204, 1);
+  margin-bottom: 30px;
+}
+
+.popup__form-input_theme_black:last-of-type {
+  margin-bottom: 0;
+}

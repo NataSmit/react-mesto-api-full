@@ -1,0 +1,10 @@
+.profile__button-item {
+  width: 10px;
+  font-size: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .profile__button-item {
+    width: 7.5px;
+  }
+}

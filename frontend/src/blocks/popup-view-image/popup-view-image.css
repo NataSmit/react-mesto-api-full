@@ -1,0 +1,10 @@
+.popup-view-image {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+
+@media screen and (max-width: 900px) {
+  .popup-view-image {
+    align-items: flex-start;
+  }
+}

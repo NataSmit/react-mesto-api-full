@@ -1,0 +1,12 @@
+.profile__details {
+  overflow: hidden;
+  max-width: 350px;
+}
+
+@media screen and (max-width: 900px) {
+  .profile__details {
+    margin-bottom: 33px;
+    max-width: 250px;
+  }
+}
+

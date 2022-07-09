@@ -1,0 +1,16 @@
+.profile__add-image {
+  max-width: 22px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1020px) {
+  .profile__add-image {
+    max-width: 17px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .profile__add-image {
+    max-width: 16px;
+  }
+}

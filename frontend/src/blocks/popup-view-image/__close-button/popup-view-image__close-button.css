@@ -1,0 +1,21 @@
+.popup-view-image__close-button {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  transition: opacity 0.3s;
+}
+
+.popup-view-image__close-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 900px) {
+  .popup-view-image__close-button {
+    top: -35px;
+    right: 0;
+  }
+}

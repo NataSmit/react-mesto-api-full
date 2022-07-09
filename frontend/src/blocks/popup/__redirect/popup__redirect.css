@@ -1,0 +1,14 @@
+.popup__redirect {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  margin: 15px 0 0 0;
+  text-decoration: none;
+  color: #FFFFFF;
+  transition: opacity .3s;
+}
+
+.popup__redirect:hover {
+  opacity: 0.6;
+}
