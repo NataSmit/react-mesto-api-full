@@ -57,7 +57,7 @@ class ApiAuth {
 }
 
 export const apiAuth = new ApiAuth({
-  baseUrl: "http://localhost:3001",
+  baseUrl: `${window.location.protocol}${process.env.REACT_APP_API_URL || '//localhost:3001'}`,
   headers: {
     "Content-Type": "application/json",
     

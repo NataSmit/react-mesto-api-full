@@ -15,6 +15,9 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const options = {
   origin: [
     'http://localhost:3000',
+    'http://mesto.project.nomorepartiesxyz.ru',
+    'https://mesto.project.nomorepartiesxyz.ru',
+    'https://github.com/NataSmit',
   ],
   credentials: true, // эта опция позволяет устанавливать куки
 };
