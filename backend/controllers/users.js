@@ -40,7 +40,9 @@ module.exports.login = (req, res, next) => {
 
 module.exports.logout = (req, res) => {
   res
-    .clearCookie('jwt', { httpOnly: true, maxAge: 3600000 * 24 * 7, sameSite: true })
+    .clearCookie('jwt', {
+      httpOnly: true, maxAge: 3600000 * 24 * 7, sameSite: 'none', secure: true,
+    })
     .send({ message: 'куки удалены' });
 };
 

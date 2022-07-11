@@ -19,7 +19,7 @@ module.exports = (req, res, next) => {
   } catch (err) {
     next(new Unauthorized('Пользователь не авторизован'));
   }
-
+   console.log(payload)
   req.user = payload; // записываем пейлоуд в объект запроса
   // eslint-disable-next-line no-console
   console.log(payload);
