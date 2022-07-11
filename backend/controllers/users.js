@@ -30,7 +30,9 @@ module.exports.login = (req, res, next) => {
     .then((user) => {
       const token = jwt.sign({ _id: user._id }, SECRET_KEY, { expiresIn: '7d' });
       res
-        .cookie('jwt', token, { httpOnly: true, maxAge: 3600000 * 24 * 7, sameSite: true })
+        .cookie('jwt', token, {
+          httpOnly: true, maxAge: 3600000 * 24 * 7, sameSite: 'none', secure: true,
+        })
         .send({ token });
     })
     .catch((err) => next(err));
