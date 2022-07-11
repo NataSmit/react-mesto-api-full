@@ -17,6 +17,8 @@ const options = {
     'http://localhost:3000',
     'http://mesto.project.nomorepartiesxyz.ru',
     'https://mesto.project.nomorepartiesxyz.ru',
+    'http://api.mesto.project.nomoredomains.xyz',
+    'https://api.mesto.project.nomoredomains.xyz',
     'https://github.com/NataSmit',
   ],
   credentials: true, // эта опция позволяет устанавливать куки
