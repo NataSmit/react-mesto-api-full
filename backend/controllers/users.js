@@ -6,6 +6,8 @@ const BadRequestError = require('../errors/BadRequestError');
 const Unauthorized = require('../errors/Unauthorized');
 const ConflictError = require('../errors/ConflictError');
 
+const { NODE_ENV, JWT_SECRET } = process.env;
+
 const SECRET_KEY = 'some-secret-key';
 
 module.exports.login = (req, res, next) => {
@@ -28,7 +30,11 @@ module.exports.login = (req, res, next) => {
         });
     })
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, SECRET_KEY, { expiresIn: '7d' });
+      const token = jwt.sign(
+        { _id: user._id },
+        NODE_ENV === 'production' ? JWT_SECRET : SECRET_KEY,
+        { expiresIn: '7d' },
+      );
       res
         .cookie('jwt', token, {
           httpOnly: true, maxAge: 3600000 * 24 * 7, sameSite: 'none', secure: true,
