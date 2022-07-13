@@ -46,7 +46,6 @@ function App() {
    api
      .getUserData()
      .then((res) => {
-      console.log('getUserData res', res)
        setCurrentUser(res);
      })
      .catch((err) => console.log(err))
@@ -58,18 +57,6 @@ function App() {
      .catch((err) => console.log(err))
    checkToken();
   }, []);
-
-  //useEffect(() => {
-  //  Promise.all([api.getUserData(), api.getInitialCards()])
-  //  .then(([userData, serverCards]) => {
-  //    console.log('userData useEff', userData)
-  //    setCurrentUser(userData)
-  //    setCards(serverCards)
-  //  })
-  //  .catch((err) => console.log(err));
-//
-  //  checkToken();
-  //}, [])
 
   function handleSignIn(password, email) {
     apiAuth
@@ -138,7 +125,7 @@ function App() {
         apiAuth
           .getUserData(jwt)
           .then((data) => {
-            console.log('checkToken', data)
+          
             if (data) {
               setLoggedIn(true);
               history.push("/");

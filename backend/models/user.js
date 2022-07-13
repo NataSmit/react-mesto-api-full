@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const isEmail = require('validator/lib/isEmail');
-const linkRegexValidator = require('../regex/linkValidation')
+const { linkRegexValidator } = require('../regex/linkValidation');
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -36,7 +36,6 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     requied: true,
-    minlength: 4,
     select: false,
   },
 });

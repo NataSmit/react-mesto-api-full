@@ -11,7 +11,6 @@ module.exports = (req, res, next) => {
   }
 
   const token = req.cookies.jwt;
-  // eslint-disable-next-line no-console
   let payload;
 
   try {

@@ -1,16 +1,13 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
-const routerUsers = require('./routes/users');
-const routerCards = require('./routes/cards');
-const { login, createUser, logout } = require('./controllers/users');
-const auth = require('./middlewares/auth');
-const { userCreationValidation, loginValidation } = require('./middlewares/joiValidation');
 const NotFoundError = require('./errors/NotFoundError');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const router = require('./routes/index');
 
 const options = {
   origin: [
@@ -37,7 +34,6 @@ app.use('*', cors(options));
 // });
 app.use(bodyParser.json());
 app.use(cookieParser());
-require('dotenv').config();
 
 mongoose.connect('mongodb://localhost:27017/mestodb', {
   useNewUrlParser: true,
@@ -51,22 +47,15 @@ app.get('/crash-test', () => {
   }, 0);
 });
 
-app.post('/signup', userCreationValidation, createUser);
-app.post('/signin', loginValidation, login);
-
-app.use(auth);
-
-app.use('/users', routerUsers);
-app.use('/cards', routerCards);
-app.get('/logout', logout);
-
-app.use(errorLogger);
-
-app.use(errors());
+app.use(router);
 
 app.use((req, res, next) => {
   next(new NotFoundError('Путь не найден'));
 });
+
+app.use(errorLogger);
+
+app.use(errors());
 
 // eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {

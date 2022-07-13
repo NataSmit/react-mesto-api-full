@@ -5,7 +5,7 @@ const ForbiddenError = require('../errors/ForbiddenError');
 
 module.exports.getCards = (req, res, next) => {
   Card.find({})
-    .then((cards) => res.status(200).send(cards))
+    .then((cards) => res.send(cards))
     .catch((err) => next(err));
 };
 
@@ -36,7 +36,7 @@ module.exports.deleteCard = (req, res, next) => {
       }
       Card.deleteOne(card)
         .then(() => {
-          res.status(200).send({ message: 'Карточка успешно удалена' });
+          res.send({ message: 'Карточка успешно удалена' });
         })
         .catch((err) => next(err));
     })
@@ -59,14 +59,12 @@ module.exports.setLike = (req, res, next) => {
       if (!card) {
         throw new NotFoundError('Запрашиваемая карточка не существует');
       } else {
-        return res.status(200).send(card);
+        return res.send(card);
       }
     })
     .catch((err) => {
       if (err.name === 'CastError') {
         next(new BadRequestError('Запрашиваемая карточка не найдена (некорректный id)'));
-      } else if (err.name === 'NotFoundError') {
-        next(err);
       } else {
         next(err);
       }
@@ -83,14 +81,12 @@ module.exports.removeLike = (req, res, next) => {
       if (!card) {
         throw new NotFoundError('Запрашиваемая карточка не существует');
       } else {
-        return res.status(200).send(card);
+        return res.send(card);
       }
     })
     .catch((err) => {
       if (err.name === 'CastError') {
         next(new BadRequestError('Запрашиваемая карточка не найдена (некорректный id)'));
-      } else if (err.name === 'NotFoundError') {
-        next(err);
       } else {
         next(err);
       }

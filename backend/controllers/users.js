@@ -16,13 +16,13 @@ module.exports.login = (req, res, next) => {
   User.findOne({ email }).select('+password')
     .then((user) => {
       if (!user) {
-        next(new Unauthorized('Неправильные почта или пароль'));
+        return next(new Unauthorized('Неправильные почта или пароль'));
       }
       return bcrypt.compare(password, user.password)
         .then((matched) => {
           if (!matched) {
           // хеши не совпали — отклоняем промис
-            next(new Unauthorized('Неправильные почта или пароль'));
+            return next(new Unauthorized('Неправильные почта или пароль')); // чтоб код не шел дальше, нужен return
           }
 
           // аутентификация успешна
