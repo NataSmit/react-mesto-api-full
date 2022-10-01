@@ -27,11 +27,11 @@
 
 
 
-!--**Информация о серевере**
+<!--**Информация о серевере**
 
 *IP:* 51.250.105.253  
 *Frontend:* https://mesto.project.nomorepartiesxyz.ru
-*Backend:* https://api.mesto.project.nomoredomains.xyz/--!
+*Backend:* https://api.mesto.project.nomoredomains.xyz/---->
 
 
 
