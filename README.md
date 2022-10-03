@@ -26,10 +26,10 @@
 - Менеджер процессов pm2  
 
 **Запуск приложения**
-- 'npm install' - установка зависимостей
-- mongod - запуск базы данных mongoDB
-- npm run start — запускает сервер (npm run dev — запускает сервер с hot-reload)
-- npm run start - запуск frontend-части
+- `npm install` - установка зависимостей
+- `mongod` - запуск базы данных mongoDB
+- `npm run start` — запускает сервер (`npm run dev` — запускает сервер с hot-reload)
+- `npm run start` - запуск frontend-части
 
 
 
